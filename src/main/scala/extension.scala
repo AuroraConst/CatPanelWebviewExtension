@@ -36,6 +36,8 @@ object cat :
         panel.doRefactor();
       }
 
+    def f(a:Any)   = "hey" //this shows an alternative way to implmeent js.Function1[Any,Any]
+
     def showHello(): js.Function1[Any, Any] =
       (arg) => {
         vscode.window.showInputBox().toFuture.onComplete {
@@ -47,6 +49,7 @@ object cat :
     val commands = List[(String,js.Function1[Any,Any])](
       ("catCoding.doRefactor", catCodingDoRefactor),
       ("catCoding.start", catCodingStart)
+      ("f",f) //this shows the alternative complies with js.Function1[Any,Any]
     )
 
     commands.foreach { case (name, fun) =>
