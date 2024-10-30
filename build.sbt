@@ -24,7 +24,7 @@ def openVSCodeTask: Def.Initialize[Task[Unit]] =
       val pathOut = baseDirectory.value / "out" 
       println(s"Path: $path")
       println(s"PathOut: $pathOut")
-      s"code.cmd --disable-web-security --extensionDevelopmentPath=$path" ! log
+      s"code.cmd  --extensionDevelopmentPath=$path" ! log
       ()
     }
     // .dependsOn(installDependencies)
